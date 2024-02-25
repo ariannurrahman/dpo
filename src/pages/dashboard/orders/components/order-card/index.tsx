@@ -1,14 +1,19 @@
 import { capitalizeFirstLetter } from 'utils';
-import './style.scss';
+import { Items, ModalType, Orders } from 'types';
 
-import { Items } from 'types';
+import './style.scss';
+import { useOrders } from '../../hooks/useOrders';
 
 interface OrderCardProps {
   customer: string;
   items: Items[];
+  id: number;
+  onClickOrderAction: (action: ModalType, data: Orders | undefined) => void;
 }
 
-export const OrderCard = ({ customer, items }: OrderCardProps) => {
+export const OrderCard = ({ customer, items, onClickOrderAction, id }: OrderCardProps) => {
+  const { onDeleteOrder } = useOrders({ data: undefined });
+
   const grandTotal = items
     .map(({ amount, price }) => {
       return amount * price;
@@ -25,6 +30,7 @@ export const OrderCard = ({ customer, items }: OrderCardProps) => {
               <div className='col'>
                 <button
                   type='button'
+                  onClick={() => onClickOrderAction('Edit', { customer, items })}
                   className='btn btn-light shadow-sm border flex justify-content-center align-items-center'
                 >
                   <svg
@@ -41,6 +47,7 @@ export const OrderCard = ({ customer, items }: OrderCardProps) => {
               </div>
               <div className='col'>
                 <button
+                  onClick={() => onDeleteOrder(id)}
                   type='button'
                   className='btn btn-light shadow-sm border flex justify-content-center align-items-center'
                 >

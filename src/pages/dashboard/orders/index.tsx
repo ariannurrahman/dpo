@@ -41,7 +41,15 @@ export const OrdersManagementPage = () => {
       <div className='container px-4 mt-3 mb-5'>
         <div className='row gx-5 gy-3'>
           {ordersData.map(({ customer, items, id }) => {
-            return <OrderCard key={id} customer={customer} items={items} />;
+            return (
+              <OrderCard
+                key={id}
+                id={id ?? 0}
+                customer={customer}
+                items={items}
+                onClickOrderAction={onClickOrderAction}
+              />
+            );
           })}
         </div>
       </div>

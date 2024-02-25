@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { useFieldArray, useForm } from 'react-hook-form';
 import { useEffect, useMemo } from 'react';
 
 import { Orders } from 'types';
@@ -12,6 +12,7 @@ interface useOrdersProps {
 export const useOrders = (props: useOrdersProps) => {
   const { addToast } = useToast();
   const {
+    control,
     reset,
     register,
     handleSubmit,
@@ -19,10 +20,15 @@ export const useOrders = (props: useOrdersProps) => {
   } = useForm<Orders>({
     defaultValues: useMemo(() => {
       if (!props.data) {
-        return undefined;
+        return { items: [{ name: '', amount: 0, price: 0 }], customer: '' };
       }
       return props?.data;
     }, [props?.data]),
+  });
+
+  const { fields, remove, append } = useFieldArray({
+    control,
+    name: 'items',
   });
 
   useEffect(() => {
@@ -63,5 +69,9 @@ export const useOrders = (props: useOrdersProps) => {
     onUpdateOrder: handleSubmit(onUpdateOrder),
     onDeleteOrder,
     register,
+    control,
+    fields,
+    remove,
+    append,
   };
 };
