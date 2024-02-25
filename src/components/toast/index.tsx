@@ -19,7 +19,7 @@ const Toast = () => {
     <div className='toast-container top-0 end-0 p-3'>
       {toasts.map(({ id, message, type }) => {
         return (
-          <div key={id} className={`toast bg-${type} show`} role='alert' aria-live='assertive' aria-atomic='true'>
+          <div key={id} className={`toast bg- ${type} show`} role='alert' aria-live='assertive' aria-atomic='true'>
             <div className='toast-header'>
               <strong className='me-auto'>DPO</strong>
               <button

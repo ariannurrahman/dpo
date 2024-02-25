@@ -6,6 +6,8 @@ import AppRoutes from 'routes';
 import DpoToasts from 'components/toast';
 import { LayoutProvider } from 'contexts/LayoutContext/LayoutContext';
 
+import './app.scss';
+
 function App() {
   return (
     <BrowserRouter>

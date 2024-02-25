@@ -13,9 +13,9 @@ export function DashboardLayout() {
   }
 
   return (
-    <div className='dasboard-layout'>
+    <div className='dashboard-layout'>
       <Navbar />
-      <div className='d-flex'>
+      <div className='content-layout'>
         <Sidebar />
         <div className='content'>
           <Outlet />

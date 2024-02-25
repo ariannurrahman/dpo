@@ -14,8 +14,7 @@ export const useLayout = () => {
 export const LayoutProvider = ({ children }: LayoutProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { isMobile } = useDetectScreen();
-  console.log('isMobile', isMobile);
-  console.log('isSidebarOpen', isSidebarOpen);
+
   useEffect(() => {
     const detectDevice = () => {
       if (isMobile) {

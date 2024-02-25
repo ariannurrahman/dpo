@@ -1,6 +1,6 @@
 .dashboard-layout {
   .content-layout {
-    display: flex;
+    display: flex !important;
     flex-flow: row nowrap;
     .content {
       overflow-y: scroll;

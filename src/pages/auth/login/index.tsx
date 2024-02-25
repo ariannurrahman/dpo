@@ -10,7 +10,7 @@ export const LoginPage = () => {
       <h1 className='text-center mb-3'>Welcome Back!</h1>
       <form onSubmit={onLogin}>
         <div className='mb-3'>
-          <label htmlFor='email' className='form-label'>
+          <label htmlFor='username' className='form-label'>
             Username
           </label>
           <input

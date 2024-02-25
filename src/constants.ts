@@ -1,3 +1,4 @@
+export const API_URL = 'https://api.dummy.com/';
 export const LOCAL_STORAGE_JWT_KEY = 'DpoAccessToken';
 
 export const NAVIGATION = [
@@ -14,3 +15,6 @@ export const NAVIGATION = [
     label: 'Authentications',
   },
 ];
+
+export const PAGE_SIZE = 5;
+export const CARD_PAGE_SIZE = 6;

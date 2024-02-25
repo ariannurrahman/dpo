@@ -13,7 +13,6 @@ export const useToast = () => {
 
 export const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<Toast[]>([]);
-  console.log('toasts', toasts);
 
   const addToast = (message: string, type: ToastType) => {
     const id = Date.now();

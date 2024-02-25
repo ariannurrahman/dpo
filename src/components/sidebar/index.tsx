@@ -15,7 +15,11 @@ export const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className={`ps-0 ps-md-5 sidebar bg-light border-end shadow-md ${!isSidebarOpen ? 'end-100' : 'start-0'}`}>
+    <div
+      className={`ps-0 ps-md-5 pt-2 pt-md-4 sidebar bg-light border-end shadow-md ${
+        !isSidebarOpen ? 'end-100' : 'start-0'
+      }`}
+    >
       <nav className='nav flex flex-column'>
         {NAVIGATION.map(({ label, to }) => {
           return (

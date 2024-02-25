@@ -4,7 +4,6 @@ import { LOCAL_STORAGE_JWT_KEY } from 'constants';
 
 export function AuthLayout() {
   const accessToken = localStorage.getItem(LOCAL_STORAGE_JWT_KEY);
-  console.log('accessToken auth', accessToken);
 
   if (accessToken) {
     return <Navigate to='/dashboard/customers' />;
