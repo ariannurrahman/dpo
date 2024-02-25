@@ -1,0 +1,11 @@
+.dashboard-layout {
+  .content-layout {
+    display: flex;
+    flex-flow: row nowrap;
+    .content {
+      overflow-y: scroll;
+      position: relative;
+      width: 100%;
+    }
+  }
+}

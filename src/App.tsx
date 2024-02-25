@@ -1,14 +1,21 @@
+import { ToastProvider } from 'contexts/ToastsContext/ToastsContext';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import AppRoutes from 'routes';
 
-import './App.css';
+import AppRoutes from 'routes';
+import DpoToasts from 'components/toast';
+import { LayoutProvider } from 'contexts/LayoutContext/LayoutContext';
 
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<p>Loading...</p>}>
-        <AppRoutes />
+        <LayoutProvider>
+          <ToastProvider>
+            <DpoToasts />
+            <AppRoutes />
+          </ToastProvider>
+        </LayoutProvider>
       </Suspense>
     </BrowserRouter>
   );

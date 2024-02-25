@@ -1,21 +1,25 @@
-import { Navbar } from 'components';
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
+
+import { LOCAL_STORAGE_JWT_KEY } from 'constants';
+import { Navbar, Sidebar } from 'components';
+
+import './style.scss';
 
 export function DashboardLayout() {
-  const location = useLocation();
-
-  const accessToken = localStorage.getItem('accessToken');
+  const accessToken = localStorage.getItem(LOCAL_STORAGE_JWT_KEY);
 
   if (!accessToken) {
     return <Navigate to='/auth/login' />;
   }
 
   return (
-    <div>
+    <div className='dasboard-layout'>
       <Navbar />
-      <div>
-        <div />
-        <Outlet />
+      <div className='d-flex'>
+        <Sidebar />
+        <div className='content'>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

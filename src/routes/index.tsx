@@ -5,12 +5,14 @@ import { DashboardRoutes } from './Dashboard';
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      <Route path='/auth/*' element={<AuthRoutes />} />
-      <Route path='/dashboard/*' element={<DashboardRoutes />} />
-      <Route path='' element={<Navigate to='/auth/login' />} />
-      <Route path='*' element={<Navigate to='/auth/login' />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path='/auth/*' element={<AuthRoutes />} />
+        <Route path='/dashboard/*' element={<DashboardRoutes />} />
+        <Route path='' element={<Navigate to='/auth/login' />} />
+        <Route path='*' element={<Navigate to='/auth/login' />} />
+      </Routes>
+    </>
   );
 };
 

@@ -12,12 +12,12 @@ export const DashboardRoutes = () => {
     <Suspense fallback={<p>Loading</p>}>
       <Routes>
         <Route path='/' element={<DashboardLayout />}>
-          <Route path='orders' element={<OrdersManagementPage />} />
           <Route path='customers' element={<CustomersManagementPage />} />
+          <Route path='orders' element={<OrdersManagementPage />} />
           <Route path='authentications' element={<AuthenticationsManagementPage />} />
 
-          <Route path='' element={<Navigate to='/dashboard/orders' />} />
-          <Route path='*' element={<Navigate to='/dashboard/orders' />} />
+          <Route path='' element={<Navigate to='/dashboard/customers' />} />
+          <Route path='*' element={<Navigate to='/dashboard/customers' />} />
         </Route>
       </Routes>
     </Suspense>
