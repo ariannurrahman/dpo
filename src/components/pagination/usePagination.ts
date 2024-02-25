@@ -1,4 +1,3 @@
-import { PAGE_SIZE } from 'constants';
 import { useState } from 'react';
 import { Authentications, Customers, Orders } from 'types';
 
